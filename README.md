@@ -1,19 +1,43 @@
-# :earth_americas: GDP dashboard template
+import streamlit as st
 
-A simple Streamlit app showing the GDP of different countries in the world.
+# Configuración de la página
+st.set_page_config(
+    page_title="MIMO | Monitor Operacional",
+    page_icon="📡",
+    layout="wide"
+)
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://gdp-dashboard-template.streamlit.app/)
+# Título de la aplicación
+st.title("MIMO")
+st.subheader("Monitor Integrado de Movimiento Operacional")
 
-### How to run it on your own machine
+# Separador
+st.divider()
 
-1. Install the requirements
+# Indicadores principales
+col1, col2, col3, col4 = st.columns(4)
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+with col1:
+    st.metric("Vehículo", "CA-742")
 
-2. Run the app
+with col2:
+    st.metric("Eventos registrados", "7")
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+with col3:
+    st.metric("Tiempo en operación", "4 h 32 min")
+
+with col4:
+    st.metric("Nivel de vibración", "Alto")
+
+st.divider()
+
+# Sección de bienvenida
+st.header("Panel de monitoreo")
+
+st.write(
+    "Bienvenido al sistema MIMO. "
+    "Desde esta plataforma podrás visualizar "
+    "los datos de movimiento, vibraciones e impactos "
+    "registrados durante la operación del vehículo."
+
+   
